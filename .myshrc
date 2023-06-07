@@ -25,4 +25,5 @@ function apt_use_default_source() {
 
 . /usr/share/autojump/autojump.sh
 
-[ -s "$NVM_HOME/nvm.sh" ] && \. "$NVM_HOME/nvm.sh"
+[ -s "$NVM_HOME/nvm.sh" ] && \. "$NVM_HOME/nvm.sh"  # This loads nvm
+[ -s "$NVM_HOME/bash_completion" ] && \. "$NVM_HOME/bash_completion"  # This loads nvm bash_completion
