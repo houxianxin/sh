@@ -12,6 +12,27 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$CONDA_HOME/bin
 
+. /usr/share/autojump/autojump.sh
+
+[ -s "$NVM_HOME/nvm.sh" ] && \. "$NVM_HOME/nvm.sh"  # This loads nvm
+[ -s "$NVM_HOME/bash_completion" ] && \. "$NVM_HOME/bash_completion"  # This loads nvm bash_completion
+
+function log_t() {
+    local message="$1"
+    local timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    echo "[$timestamp] $message"
+}
+function get_timestamp() {
+    date +%s
+}
+function check_command_is_installed() {
+    local command="$1"
+    if command -v "$command" > /dev/null 2>&1; then
+        return 0
+    else
+        return 1
+    fi
+}
 function apt_use_aliyun_source() {
     cp /etc/apt/sources.list /etc/apt/sources.list.bak
     sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
@@ -22,8 +43,14 @@ function apt_use_default_source() {
     sed -i "s/mirrors.aliyun.com/archive.ubuntu.com/g" /etc/apt/sources.list
     apt-get update
 }
-
-. /usr/share/autojump/autojump.sh
-
-[ -s "$NVM_HOME/nvm.sh" ] && \. "$NVM_HOME/nvm.sh"  # This loads nvm
-[ -s "$NVM_HOME/bash_completion" ] && \. "$NVM_HOME/bash_completion"  # This loads nvm bash_completion
+function apt_update() {
+    apt-get update
+}
+function apt_install() {
+    local package="$1"
+    apt-get install -y --no-install-recommends "$package"
+}
+function apt_clean() {
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+}
