@@ -15,7 +15,7 @@ dpkg -i ./ca-certificates_20230311ubuntu1_all.deb && \
 rm ./ca-certificates_20230311ubuntu1_all.deb && \
 
 # 创建~/.myshrc
-echo "" > ~/.myshrc
+echo '. /usr/share/autojump/autojump.sh' >> ~/.myshrc && \
 
 # 安装ohmyzsh及其插件
 export GIT_SSL_NO_VERIFY=true && \
