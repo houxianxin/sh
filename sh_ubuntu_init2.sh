@@ -90,7 +90,7 @@ unzip /tmp/tools.zip -d ${ANDROID_HOME}/cmdline-tools && \
 mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest && \
 
 # 安装homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
 
 # 写入环境变量到.myshrc
 echo '
