@@ -88,6 +88,7 @@ mkdir -p ${ANDROID_HOME}/cmdline-tools && \
 wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O /tmp/tools.zip && \
 unzip /tmp/tools.zip -d ${ANDROID_HOME}/cmdline-tools && \
 mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/latest && \
+rm /tmp/tools.zip && \
 
 # 安装homebrew
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
