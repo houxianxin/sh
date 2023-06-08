@@ -92,6 +92,22 @@ mv ${ANDROID_HOME}/cmdline-tools/cmdline-tools ${ANDROID_HOME}/cmdline-tools/lat
 # 安装homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
 
+# 写入环境变量到.myshrc
+echo '
+export MY_ROOT_HOME=/
+export ZSH_HOME=~/.oh-my-zsh
+export CONDA_HOME=~/miniconda3
+export JAVA_HOME=~/.sdkman/candidates/java/current
+export ANDROID_HOME=~/android-sdk
+export PATH=\$PATH:\$JAVA_HOME/bin
+export PATH=\$PATH:\$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=\$PATH:\$ANDROID_HOME/emulator
+export PATH=\$PATH:\$ANDROID_HOME/tools
+export PATH=\$PATH:\$ANDROID_HOME/tools/bin
+export PATH=\$PATH:\$ANDROID_HOME/platform-tools
+export PATH=\$PATH:\$CONDA_HOME/bin
+' >> ~/.myshrc && \
+
 # 设置默认shell
 chsh -s /bin/zsh && \
 zsh -c "source ~/.zshrc"
