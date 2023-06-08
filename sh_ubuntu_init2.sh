@@ -83,6 +83,7 @@ bash < <(curl -s -S -L https://ghproxy.com/https://raw.githubusercontent.com/moo
 zsh -c "source /root/.gvm/scripts/gvm" && \
 
 # 安装android command line tools
+export ANDROID_HOME=~/android-sdk && \
 mkdir -p ${ANDROID_HOME}/cmdline-tools && \
 wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O /tmp/tools.zip && \
 unzip /tmp/tools.zip -d ${ANDROID_HOME}/cmdline-tools && \
