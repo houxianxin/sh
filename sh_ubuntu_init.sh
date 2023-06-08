@@ -3,8 +3,7 @@
 # 使用apt安装基础包
 export DEBIAN_FRONTEND=noninteractive && \
 apt-get update && apt-get install -y --no-install-recommends zsh curl git autojump direnv vim openssh-server zip unzip wget openssl sudo tar lrzsz rsync gcc g++ make locales tzdata tmux openvpn && \
-apt-get clean && \
-rm -rf /var/lib/apt/lists/* && \
+apt-get clean && rm -rf /var/lib/apt/lists/* && \
     
 # 初始化设置utf-8编码
 locale-gen en_US.UTF-8 && \
